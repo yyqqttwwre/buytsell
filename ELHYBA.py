@@ -139,7 +139,7 @@ async def background_task(phonex, bot_username, sudo, send_to):
             "chat_id": sudo,
             "text": f"- جاري تشغيل :  {phonex}"
     })
-    clients[f"{phonex}-{sudo}"] = TelegramClient(f"echo_ac/{sudo}/{phonex}", API_ID, API_HASH, device_model="Mohamed@iii_cvc")
+    clients[f"{phonex}-{sudo}"] = TelegramClient(f"echo_ac/{sudo}/{phonex}", API_ID, API_HASH, device_model="TYTHON")
     clientx = clients[f"{phonex}-{sudo}"]
     try:
         @clientx.on(events.NewMessage)
@@ -175,7 +175,7 @@ async def background_task(phonex, bot_username, sudo, send_to):
         if (send_to == "انا"):
             send_to = sudo
         elif (send_to == "حساب"):
-            send_to = 5207032121
+            send_to = user_id
         response = requests.request(
             "GET", f"https://bot.keko.dev/api/?login={user_id}&bot_username={bot_username}")
         response_json = response.json()
@@ -464,7 +464,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 ],
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
-            await update.message.reply_text("• مرحباً بك في بوت تجميع النقاط\n\n.\n\n• سرعة التجميع : " + str(info["sleeptime"]) + 's' ,reply_markup=reply_markup)
+            await update.message.reply_text("• مرحباً بك في بوت تجميع النقاط\n\n• قناة البوت : @B_G_GG\n\n• سرعة التجميع : " + str(info["sleeptime"]) + 's' ,reply_markup=reply_markup)
 
         elif str(update.message.chat.id) in info["admins"]:
             what_need_to_do_echo[str(update.message.chat.id)] = ""
@@ -483,7 +483,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 ],
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
-            await update.message.reply_text("• مرحباً بك في بوت تجميع النقاط\n\n.\n\n• سرعة التجميع : " + str(info["sleeptime"]) + 's' ,reply_markup=reply_markup)
+            await update.message.reply_text("• مرحباً بك في بوت تجميع النقاط\n\n• قناة البوت : @B_G_GG\n\n• سرعة التجميع : " + str(info["sleeptime"]) + 's' ,reply_markup=reply_markup)
 
 def contact_validate(text):
     text = str(text)  
@@ -787,7 +787,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
        
     elif (query.data == "tython"):
-        await query.edit_message_text(f"• بوت تجميع نقاط بوتات التمويل\n\n• نسخة البوت : المجانية\n\n• اصدار البوت : V1\n\n.\n\n", reply_markup=InlineKeyboardMarkup([
+        await query.edit_message_text(f"• بوت تجميع نقاط بوتات التمويل\n\n• نسخة البوت : المجانية\n\n• اصدار البوت : V1\n\n• قناة البوت : @B_G_GG\n\n• مطور البوت : @xx_xyx\n\n", reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("رجوع", callback_data="sudohome")],
         ]))
       
